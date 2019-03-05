@@ -97,3 +97,8 @@ mplayer ni np q
 - `squarewavegenerator mplayer q np sr 44100 g 1`: for scripts; do not write to stdout/stderr and only take note data from stdin
 - `squarewavegenerator mplayer ni np q w 1 freq 440 w 2 freq 660 g .5`: two notes mean that you should lower the gain to avoid clipping
 - `squarewavegenerator ni w 1 shape square w 1 freqramp 'cos(7*2*pi*x)/2 - .125*abs(x-.5)^(1/5)*((x-.5)/abs(x-.5))' w 1 end 30s w 1 freqstart G5 w 1 freqend C6 mplayer`: plays an ambulance noise, including approximated Doppler-effect
+
+
+## Known bugs
+- The "squished" version doesn't work. Just get the regular version.
+- There is an error in the conversion between a number and an IEEE754 32-bit float string, which makes some specific values come through as other ones. This effect is audible, but not too much. The reason for this is being researched. Nag me if you want it quicker.
