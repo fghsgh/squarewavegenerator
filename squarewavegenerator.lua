@@ -139,6 +139,9 @@ local function pcmstring(n)
   if n < 0 then
     n = n + 2 -- wraps -1 to 1 and 0 to 2=0
   end
+  if n >= 2 then
+    n = 0
+  end
   n = math.floor(n * 32768)
   return string.char(bit32.rshift(n,8),bit32.band(n,0xff))
 end
